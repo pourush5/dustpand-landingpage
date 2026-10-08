@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Metadata -->
+  <title>DustPan — High-Performance Conservative Disk Triage for Windows</title>
+  <meta name="title" content="DustPan — High-Performance Conservative Disk Triage for Windows">
+  <meta name="description" content="Conservative, privacy-first disk triage and space recovery desktop application engineered natively for Windows 10 and 11. Zero surprise deletions, cloud hydration safety, byte-exact duplicate hashing, and inspectable Robocopy scripts.">
+  <meta name="keywords" content="disk cleanup, windows disk triage, disk space recovery, cloud safe cleanup, duplicate file finder sha256, robocopy backup generator, privacy disk cleaner, windows 11 disk manager">
+  <meta name="author" content="Pourush Pandey">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#06b6d4">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pourush5.github.io/dustpand-landingpage/">
+  <meta property="og:title" content="DustPan — Conservative Disk Triage & Space Recovery">
+  <meta property="og:description" content="Reclaim gigabytes without risking your files. Zero blind deletions, cloud hydration protection, and inspectable Robocopy scripts for Windows 10 & 11.">
+  <meta property="og:image" content="dustpan_icon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://pourush5.github.io/dustpand-landingpage/">
+  <meta property="twitter:title" content="DustPan — Conservative Disk Triage & Space Recovery">
+  <meta property="twitter:description" content="Zero blind deletions. Native Win32 cloud-safe duplicate hashing and non-destructive disk triage.">
+  <meta property="twitter:image" content="dustpan_icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="dustpan.ico">
+  <link rel="icon" type="image/png" href="dustpan_icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DustPan",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Conservative, assisted disk triage and space recovery desktop utility with cloud-hydration protection and cryptographic duplicate detection.",
+    "author": {
+      "@type": "Person",
+      "name": "Pourush Pandey",
+      "url": "https://pourushpandey.vercel.app"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Community Edition",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro Lifetime License",
+        "price": "14",
+        "priceCurrency": "USD",
+        "url": "https://pourush0.gumroad.com/l/dustpan"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient background grid -->
+  <div class="ambient-grid"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-wrapper" id="navBrand">
+        <div class="brand-icon">
+          <img src="dustpan_icon.png" alt="DustPan Logo">
+        </div>
+        <div class="brand-title">
+          DustPan
+          <span class="brand-tag">v1.0.0</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Pillars</a></li>
+        <li><a href="#demo" class="nav-link">Live Simulation</a></li>
+        <li><a href="#architecture" class="nav-link">Under The Hood</a></li>
+        <li><a href="#comparison" class="nav-link">Comparison</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://pourush0.gumroad.com/l/dustpan" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-pro" id="navBtnPro">
+          Pro Lifetime ($14)
+        </a>
+        <a href="#download" class="btn btn-sm btn-primary" id="navBtnDownload">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      
+      <!-- Announcement Pill -->
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span><strong>DustPan 1.0.0 for Windows</strong> • 100% Local Loopback • Zero Telemetry</span>
+      </div>
+
+      <!-- Hero Headline -->
+      <h1 class="hero-title">
+        The Conservative Disk Triage Engine <br>
+        <span class="gradient-text">Engineered for Windows</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle">
+        Reclaim dozens of gigabytes without the fear of permanent data loss. 
+        Zero blind deletions, native Win32 cloud hydration protection, cryptographic duplicate verification, 
+        and inspectable Robocopy backup scripts.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta-group">
+        <a href="#download" class="btn btn-lg btn-primary" id="heroCtaDownload">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download for Windows 10 & 11
+        </a>
+        <a href="#demo" class="btn btn-lg btn-secondary" id="heroCtaDemo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Try Interactive Simulation
+        </a>
+        <a href="https://pourush0.gumroad.com/l/dustpan" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-pro" id="heroCtaGumroad">
+          Get Pro Lifetime ($14)
+        </a>
+      </div>
+
+      <!-- Trust & Specs Badges -->
+      <div class="hero-specs">
+        <div class="spec-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>4.37 MB Lightweight Installer</span>
+        </div>
+        <div class="spec-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Single Native Go Executable</span>
+        </div>
+        <div class="spec-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Zero Telemetry / No Phone-Home</span>
+        </div>
+        <div class="spec-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>14-Day Full Unrestricted Trial</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Simulated Native Dashboard -->
+      <div class="hero-mockup-wrap">
+        <div class="mockup-glow"></div>
+
+        <!-- Floating callouts -->
+        <div class="floating-badge badge-left">
+          <div class="floating-icon icon-cyan">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          </div>
+          <div>
+            <div class="floating-text-main">Cloud Hydration Guard Active</div>
+            <div class="floating-text-sub">18.4 GB cloud files skipped safely</div>
+          </div>
+        </div>
+
+        <div class="floating-badge badge-right">
+          <div class="floating-icon icon-emerald">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="floating-text-main">Isolated Staging Manifest</div>
+            <div class="floating-text-sub">Atomic 1-click restore enabled</div>
+          </div>
+        </div>
+
+        <!-- The App Window Frame -->
+        <div class="mockup-window">
+          <div class="window-titlebar">
+            <div class="window-dots">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="window-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+              DustPan — Read-Only Disk Intelligence &amp; Triage
+            </div>
+            <div class="window-url-bar">
+              http://127.0.0.1:8484
+            </div>
+          </div>
+
+          <div class="mockup-content">
+            <!-- App Header Inside Mockup -->
+            <div class="mockup-dash-header">
+              <div class="mockup-brand">
+                <img src="dustpan_icon.png" alt="DustPan Logo" class="mockup-brand-img">
+                <div>
+                  <div class="mockup-brand-name">DustPan Desktop Dashboard</div>
+                  <div class="mockup-brand-sub">Scanning C:\Users\user\Downloads &amp; Documents</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <span class="badge badge-emerald">14-Day Free Trial</span>
+                <span class="badge badge-cyan">Win32 Native Mutex</span>
+              </div>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="mockup-metrics-row">
+              <div class="mockup-metric">
+                <div class="mockup-metric-lbl">Total Scanned</div>
+                <div class="mockup-metric-val">58.4 GB</div>
+                <div class="mockup-metric-sub">1,482 files indexed</div>
+              </div>
+              <div class="mockup-metric border-rose">
+                <div class="mockup-metric-lbl">To Delete (Stale)</div>
+                <div class="mockup-metric-val text-rose">14.2 GB</div>
+                <div class="mockup-metric-sub">128 files &gt; 180 days</div>
+              </div>
+              <div class="mockup-metric border-amber">
+                <div class="mockup-metric-lbl">To Backup (Archive)</div>
+                <div class="mockup-metric-val text-amber">22.8 GB</div>
+                <div class="mockup-metric-sub">46 files &gt; 3 years old</div>
+              </div>
+              <div class="mockup-metric border-cyan">
+                <div class="mockup-metric-lbl">Duplicate Redundancy</div>
+                <div class="mockup-metric-val text-cyan">8.6 GB</div>
+                <div class="mockup-metric-sub">14 cryptographic sets</div>
+              </div>
+            </div>
+
+            <!-- Split Analytics View -->
+            <div class="mockup-split">
+              <!-- Category Footprint -->
+              <div class="mockup-card">
+                <div class="mockup-card-title">
+                  <span>Disk Footprint by Category</span>
+                  <span class="mockup-card-sub">Automatic Classification</span>
+                </div>
+                <div class="category-bars">
+                  <div class="category-bar-item">
+                    <div class="cat-bar-header">
+                      <span class="cat-bar-name">🎬 Video Renders &amp; Media</span>
+                      <span class="cat-bar-size">24.5 GB (42%)</span>
+                    </div>
+                    <div class="cat-bar-track">
+                      <div class="cat-bar-fill" style="width: 42%; background: #06b6d4;"></div>
+                    </div>
+                  </div>
+                  <div class="category-bar-item">
+                    <div class="cat-bar-header">
+                      <span class="cat-bar-name">📦 Archives &amp; Installers (ISOs)</span>
+                      <span class="cat-bar-size">18.2 GB (31%)</span>
+                    </div>
+                    <div class="cat-bar-track">
+                      <div class="cat-bar-fill" style="width: 31%; background: #6366f1;"></div>
+                    </div>
+                  </div>
+                  <div class="category-bar-item">
+                    <div class="cat-bar-header">
+                      <span class="cat-bar-name">💿 Virtual Machines &amp; Disk Images</span>
+                      <span class="cat-bar-size">10.1 GB (17%)</span>
+                    </div>
+                    <div class="cat-bar-track">
+                      <div class="cat-bar-fill" style="width: 17%; background: #f59e0b;"></div>
+                    </div>
+                  </div>
+                  <div class="category-bar-item">
+                    <div class="cat-bar-header">
+                      <span class="cat-bar-name">📄 Documents &amp; Raw Assets</span>
+                      <span class="cat-bar-size">5.6 GB (10%)</span>
+                    </div>
+                    <div class="cat-bar-track">
+                      <div class="cat-bar-fill" style="width: 10%; background: #10b981;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Age Timeline -->
+              <div class="mockup-card">
+                <div class="mockup-card-title">
+                  <span>Age &amp; Staleness Timeline</span>
+                  <span class="mockup-card-sub">Last Modified Profile</span>
+                </div>
+                <div class="age-bars-container">
+                  <div class="age-col">
+                    <div class="age-col-size">4.2 GB</div>
+                    <div class="age-col-bar" style="height: 25%; --col-color: #10b981;"></div>
+                    <div class="age-col-label">&lt; 30d</div>
+                  </div>
+                  <div class="age-col">
+                    <div class="age-col-size">8.6 GB</div>
+                    <div class="age-col-bar" style="height: 45%; --col-color: #06b6d4;"></div>
+                    <div class="age-col-label">1-6mo</div>
+                  </div>
+                  <div class="age-col">
+                    <div class="age-col-size">14.2 GB</div>
+                    <div class="age-col-bar" style="height: 65%; --col-color: #f59e0b;"></div>
+                    <div class="age-col-label">6-12mo</div>
+                  </div>
+                  <div class="age-col">
+                    <div class="age-col-size">18.5 GB</div>
+                    <div class="age-col-bar" style="height: 85%; --col-color: #f43f5e;"></div>
+                    <div class="age-col-label">1-3yr</div>
+                  </div>
+                  <div class="age-col">
+                    <div class="age-col-size">12.9 GB</div>
+                    <div class="age-col-bar" style="height: 58%; --col-color: #a855f7;"></div>
+                    <div class="age-col-label">&gt; 3yr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Pillars / Why DustPan Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Engineering Philosophy</span>
+        <h2 class="section-title">Built Upon Conservative Principles</h2>
+        <p class="section-desc">
+          Most "cleaners" act like bulldozers—blindly deleting temp files and registry keys. 
+          DustPan acts like an intelligent forensic assistant that helps you decide, stage, and preserve.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card" style="--card-accent: var(--accent-rose);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="feature-card-title">Zero Surprise Deletions</h3>
+          <p class="feature-card-text">
+            DustPan never executes unprompted permanent removals. Instead of shredding files into the void, 
+            it moves candidate items to an isolated staging folder with an atomic JSON reversal manifest. 
+            Change your mind? Restore all files instantly with a single click.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">manifest.json</span>
+            <span class="feature-pill">Atomic Rollback</span>
+            <span class="feature-pill">DustPan_Review/</span>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card" style="--card-accent: var(--accent-cyan);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3 class="feature-card-title">Win32 Cloud Hydration Guard</h3>
+          <p class="feature-card-text">
+            Blind scanners touch every file, triggering massive unwanted downloads of dehydrated cloud files. 
+            DustPan inspects Windows kernel attributes (<code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS</code>) 
+            to identify dehydrated offline files and skip them safely.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">kernel32.dll</span>
+            <span class="feature-pill">Reparse Points</span>
+            <span class="feature-pill">Cloud-Sync Safe</span>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card" style="--card-accent: var(--accent-indigo);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="feature-card-title">Cryptographic Header-Hasher</h3>
+          <p class="feature-card-text">
+            Find true byte-level duplicate files regardless of their names. DustPan uses a 3-stage pipeline: 
+            exact byte size grouping, 64 KB header SHA-256 hash checks, and full payload verification. 
+            Lightning fast on multi-gigabyte files without wasting I/O.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">64KB Fast-Head</span>
+            <span class="feature-pill">SHA-256 Checksum</span>
+            <span class="feature-pill">Zero False Positives</span>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card" style="--card-accent: var(--accent-amber);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3 class="feature-card-title">Inspectable Robocopy Scripts</h3>
+          <p class="feature-card-text">
+            Don't want to delete large files, but need to offload them to an external SSD or pendrive? 
+            DustPan exports standalone Windows batch scripts utilizing native <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber);">robocopy.exe /Z</code> 
+            with restartable transfer resilience. Inspect the script in Notepad before you run it.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">robocopy /Z</span>
+            <span class="feature-pill">Human Inspectable</span>
+            <span class="feature-pill">External USB Ready</span>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card" style="--card-accent: var(--accent-emerald);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3 class="feature-card-title">100% Local &amp; Zero Telemetry</h3>
+          <p class="feature-card-text">
+            The application operates as a self-contained local Go HTTP daemon strictly bound to <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #34d399;">127.0.0.1:8484</code>. 
+            Your file paths, names, directories, and disk hierarchy never leave your PC. Absolutely zero tracking, analytics, or surveillance.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">127.0.0.1 Only</span>
+            <span class="feature-pill">No Network Snooping</span>
+            <span class="feature-pill">Air-Gapped Friendly</span>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card" style="--card-accent: var(--accent-purple);">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3 class="feature-card-title">Dev-Clutter Auto-Filter</h3>
+          <p class="feature-card-text">
+            Ever had a disk scanner freeze while traversing 200,000 tiny files inside a JavaScript dependency tree? 
+            DustPan automatically ignores heavy dev noise such as <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #c084fc;">node_modules</code>, 
+            <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #c084fc;">.venv</code>, <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #c084fc;">.git</code>, 
+            and build caches, focusing purely on real storage hogs.
+          </p>
+          <div class="feature-pill-list">
+            <span class="feature-pill">node_modules</span>
+            <span class="feature-pill">.venv</span>
+            <span class="feature-pill">__pycache__</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Live Simulator Section -->
+  <section class="section demo-section" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Preview</span>
+        <h2 class="section-title">Try The Triage Engine Right Now</h2>
+        <p class="section-desc">
+          Test-drive DustPan's triage logic directly in your browser. Choose a realistic Windows storage profile, 
+          run a simulated scan, filter candidates, and inspect the generated staging manifests and Robocopy backup scripts.
+        </p>
+      </div>
+
+      <div class="demo-card">
+        <!-- Demo Control Toolbar -->
+        <div class="demo-controls-bar">
+          <div class="preset-selector">
+            <span class="preset-label">Simulation Profile:</span>
+            <select id="demoProfileSelect" class="select-custom">
+              <option value="downloads">Windows Downloads Folder (42.8 GB • 18 Items)</option>
+              <option value="video">Creative Video &amp; 3D Render Vault (118.5 GB • 24 Items)</option>
+              <option value="developer">Developer Workspace &amp; Old ISOs (64.2 GB • 15 Items)</option>
+            </select>
+          </div>
+
+          <div class="demo-run-actions">
+            <button id="demoRunBtn" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Run Triage Analysis
+            </button>
+            <button id="demoResetBtn" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulated Scan Progress Indicator -->
+        <div class="demo-progress-wrap" id="demoProgressWrap">
+          <div class="demo-progress-info">
+            <span id="demoProgressText">Traversing filesystem &amp; hashing headers...</span>
+            <span id="demoProgressPercent">0%</span>
+          </div>
+          <div class="demo-progress-bar">
+            <div class="demo-progress-fill" id="demoProgressFill"></div>
+          </div>
+        </div>
+
+        <!-- Demo Body -->
+        <div class="demo-body">
+          <!-- Summary Metrics inside Demo -->
+          <div class="mockup-metrics-row">
+            <div class="mockup-metric">
+              <div class="mockup-metric-lbl">Total Scanned</div>
+              <div class="mockup-metric-val" id="demoValTotal">42.8 GB</div>
+              <div class="mockup-metric-sub" id="demoValCount">18 files indexed</div>
+            </div>
+            <div class="mockup-metric border-rose">
+              <div class="mockup-metric-lbl">To Delete (Stale &gt;180d)</div>
+              <div class="mockup-metric-val text-rose" id="demoValDelete">14.6 GB</div>
+              <div class="mockup-metric-sub" id="demoValDeleteCount">7 candidates</div>
+            </div>
+            <div class="mockup-metric border-amber">
+              <div class="mockup-metric-lbl">To Backup (Archive &gt;3yr)</div>
+              <div class="mockup-metric-val text-amber" id="demoValBackup">18.2 GB</div>
+              <div class="mockup-metric-sub" id="demoValBackupCount">5 files</div>
+            </div>
+            <div class="mockup-metric border-cyan">
+              <div class="mockup-metric-lbl">Duplicate Redundancy</div>
+              <div class="mockup-metric-val text-cyan" id="demoValDuplicate">6.4 GB</div>
+              <div class="mockup-metric-sub" id="demoValDupCount">3 duplicate sets</div>
+            </div>
+          </div>
+
+          <!-- Tabs and Action Toolbar -->
+          <div class="demo-tabs-bar">
+            <div class="demo-tabs">
+              <button class="demo-tab-btn active" data-tab="all" id="tabAll">All Candidates (<span id="tabCountAll">18</span>)</button>
+              <button class="demo-tab-btn" data-tab="delete" id="tabDelete">To Delete (<span id="tabCountDelete">7</span>)</button>
+              <button class="demo-tab-btn" data-tab="backup" id="tabBackup">To Backup (<span id="tabCountBackup">5</span>)</button>
+              <button class="demo-tab-btn" data-tab="duplicate" id="tabDup">Duplicates (<span id="tabCountDup">4</span>)</button>
+            </div>
+
+            <div class="demo-action-buttons">
+              <button class="btn btn-sm btn-secondary" id="btnDemoExportScript" title="Simulate generating native Windows Robocopy script">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                Generate Backup .bat
+              </button>
+              <button class="btn btn-sm btn-secondary" id="btnDemoStage" title="Simulate isolated review staging">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                Stage to Review Folder
+              </button>
+              <button class="btn btn-sm btn-secondary" id="btnDemoCsv" title="Export audit manifest as CSV">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export CSV
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Candidates Table -->
+          <div class="demo-table-container">
+            <table class="demo-table">
+              <thead>
+                <tr>
+                  <th width="35"><input type="checkbox" id="demoSelectAll" checked></th>
+                  <th>File Name &amp; Path</th>
+                  <th>Category</th>
+                  <th>Size</th>
+                  <th>Age Bracket</th>
+                  <th>Suggested Action</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="demoTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Dynamic Output Terminal Drawer (Staging Manifest & Robocopy Script) -->
+          <div class="output-preview-card" id="outputPreviewCard">
+            <div class="output-header">
+              <div class="output-title" id="outputTitle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                Generated Artifact Preview
+              </div>
+              <button class="code-copy-btn" id="btnCopyDemoOutput">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy Output
+              </button>
+            </div>
+            <pre class="output-code" id="outputCodeSnippet"></pre>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture & Under The Hood -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Under The Hood</span>
+        <h2 class="section-title">Engineered with Native Precision</h2>
+        <p class="section-desc">
+          DustPan combines native Go concurrency with direct Windows Win32 API calls for maximum performance and zero dependency overhead.
+        </p>
+      </div>
+
+      <div class="arch-grid">
+        <!-- Architecture Explanation -->
+        <div class="arch-info-card">
+          <div>
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 12px;">
+              System Architecture &amp; Native Win32 Subsystems
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Unlike bloated Electron apps that consume 500 MB of RAM just to show a list of files, DustPan is a single compiled Go binary. 
+              It spins up an embedded loopback HTTP server and pairs it with low-level Win32 kernel calls.
+            </p>
+
+            <div class="arch-step-list">
+              <div class="arch-step">
+                <div class="arch-step-num">1</div>
+                <div class="arch-step-content">
+                  <h4>Win32 Named Mutex Single-Instance Lock</h4>
+                  <p>Calls <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">kernel32.CreateMutexW</code> with <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Local\DustPan_SingleInstance_Mutex</code> to ensure only one instance ever runs.</p>
+                </div>
+              </div>
+
+              <div class="arch-step">
+                <div class="arch-step-num">2</div>
+                <div class="arch-step-content">
+                  <h4>Cloud Reparse Point Inspection</h4>
+                  <p>Queries <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">GetFileAttributesW</code> for <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">0x00400000</code> (<code style="font-family: var(--font-mono); font-size: 0.8rem;">RECALL_ON_DATA_ACCESS</code>) and skips offline files.</p>
+                </div>
+              </div>
+
+              <div class="arch-step">
+                <div class="arch-step-num">3</div>
+                <div class="arch-step-content">
+                  <h4>Offline HMAC-SHA256 Cryptographic Licensing</h4>
+                  <p>Verified licenses are salted and cached locally in <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">AppData/DustPan/config.json</code>. Zero external network calls after initial activation.</p>
+                </div>
+              </div>
+
+              <div class="arch-step">
+                <div class="arch-step-num">4</div>
+                <div class="arch-step-content">
+                  <h4>Ultra LZMA2 Inno Setup Packaging</h4>
+                  <p>Compressed using ultra LZMA2 solid compression down to just <strong>4.37 MB</strong>, with a clean uninstaller that leaves zero registry debris.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Code Viewer -->
+        <div class="code-viewer-card">
+          <div class="code-tabs-header">
+            <button class="code-tab-btn active" data-code="cloud">win32_attributes.go</button>
+            <button class="code-tab-btn" data-code="robocopy">robocopy_backup.bat</button>
+            <button class="code-tab-btn" data-code="manifest">manifest.json</button>
+            <button class="code-copy-btn" id="btnCopyArchCode">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy Code
+            </button>
+          </div>
+
+          <pre class="code-body" id="archCodeBody">
+<span class="code-comment">// Win32 Cloud-Hydration Detection</span>
+<span class="code-keyword">package</span> scanner
+
+<span class="code-keyword">import</span> (
+    <span class="code-str">"golang.org/x/sys/windows"</span>
+    <span class="code-str">"syscall"</span>
+)
+
+<span class="code-comment">// Query kernel32.dll for dehydrated cloud reparse attributes</span>
+<span class="code-keyword">const</span> (
+    FILE_ATTRIBUTE_OFFLINE               = <span class="code-flag">0x00001000</span>
+    FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS = <span class="code-flag">0x00400000</span>
+)
+
+<span class="code-keyword">func</span> <span class="code-func">IsCloudOnlyFile</span>(path <span class="code-keyword">string</span>) <span class="code-keyword">bool</span> {
+    ptr, err := syscall.UTF16PtrFromString(path)
+    <span class="code-keyword">if</span> err != <span class="code-keyword">nil</span> { <span class="code-keyword">return false</span> }
+
+    attrs, err := windows.GetFileAttributes(ptr)
+    <span class="code-keyword">if</span> err != <span class="code-keyword">nil</span> { <span class="code-keyword">return false</span> }
+
+    <span class="code-comment">// Skip if file is online-only (prevents multi-GB downloads)</span>
+    <span class="code-keyword">return</span> (attrs&FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS) != 0 ||
+           (attrs&FILE_ATTRIBUTE_OFFLINE) != 0
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Comparison Table -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Head to Head</span>
+        <h2 class="section-title">Why DustPan Stands Apart</h2>
+        <p class="section-desc">
+          Compare how DustPan's assisted triage philosophy handles your precious storage compared to traditional "cleaners" and disk visualizers.
+        </p>
+      </div>
+
+      <div class="comparison-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th width="35%">Triage &amp; Storage Feature</th>
+              <th width="35%" class="col-dustpan">DustPan Desktop</th>
+              <th width="30%">Traditional Automated Cleaners</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="comp-feature-name">Data Deletion Risk</div>
+                <div class="comp-feature-desc">How files are treated when reclaiming space</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Zero blind deletes. Staging with atomic 1-click restore.
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Permanent batch deletion directly from disk.
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="comp-feature-name">Cloud-Sync Hydration Safety</div>
+                <div class="comp-feature-desc">Handling dehydrated cloud-only reparse points</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Win32 reparse detection skips cloud files safely.
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Opens files blindly, triggering massive cloud downloads.
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="comp-feature-name">External Backup Integration</div>
+                <div class="comp-feature-desc">Moving files to external SSDs or USB pen drives</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Inspectable native Robocopy /Z restartable batch scripts.
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  No backup script generation; user must copy manually.
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="comp-feature-name">Duplicate Detection Accuracy</div>
+                <div class="comp-feature-desc">Verifying byte-level identical files</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  3-stage cryptographic SHA-256 header + full verification.
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Often relies on superficial filename matching or CRC32.
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="comp-feature-name">Privacy &amp; Telemetry</div>
+                <div class="comp-feature-desc">Data transmission to remote analytics servers</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  100% loopback (127.0.0.1:8484). Zero outbound telemetry.
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Heavy telemetry, analytics tracking, and background upselling.
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="comp-feature-name">Monetization Model</div>
+                <div class="comp-feature-desc">License structure and subscriptions</div>
+              </td>
+              <td class="col-dustpan">
+                <span class="icon-check">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Free Forever scanning + CSV. Single $14 Lifetime Pro (No sub).
+                </span>
+              </td>
+              <td>
+                <span class="icon-cross">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  $29.99/year recurring subscriptions and renewal traps.
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Honest Monetization</span>
+        <h2 class="section-title">Transparent &amp; Respectful Pricing</h2>
+        <p class="section-desc">
+          DustPan includes an unrestricted 14-day free trial on first launch. 
+          Scan, visualize, find duplicates, and export CSV audit manifests completely free forever.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Community Tier -->
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Community Edition</div>
+          <div class="pricing-tagline">Complete forensic disk intelligence for every Windows user</div>
+          <div class="pricing-price-wrap">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount">0</span>
+            <span class="pricing-period">/ Forever Free</span>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Multi-threaded native Go filesystem traversal</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Visual footprint category breakdowns</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>5-Bracket staleness &amp; age distribution chart</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>3-Stage cryptographic duplicate detection (SHA-256)</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Win32 cloud reparse protection</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Unlimited full CSV audit manifest exports</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>14-Day Free Evaluation</strong> of all Pro features</span>
+            </li>
+          </ul>
+
+          <a href="#download" class="btn btn-secondary">
+            Download Free
+          </a>
+        </div>
+
+        <!-- Pro Lifetime Tier -->
+        <div class="pricing-card featured">
+          <div class="pricing-ribbon">Single Lifetime License</div>
+          <div class="pricing-tier-name">DustPan Pro Lifetime</div>
+          <div class="pricing-tagline">For power users, creators, and developers managing heavy disks</div>
+          <div class="pricing-price-wrap">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount">14</span>
+            <span class="pricing-period">/ One-time payment</span>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item highlight">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Everything in Community Edition</strong></span>
+            </li>
+            <li class="pricing-feature-item highlight">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>1-Click Isolated Review Staging</strong> (Move candidates safely)</span>
+            </li>
+            <li class="pricing-feature-item highlight">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Atomic Rollback Manifest</strong> (<code style="font-family: var(--font-mono); font-size: 0.8rem;">manifest.json</code> 1-click restore)</span>
+            </li>
+            <li class="pricing-feature-item highlight">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Native Windows Robocopy (.bat) Script Generator</strong></span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Offline HMAC-SHA256 signature verification</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Perpetual lifetime license (Up to 3 personal PCs)</span>
+            </li>
+            <li class="pricing-feature-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>All future v1.x version releases and updates</span>
+            </li>
+          </ul>
+
+          <a href="https://pourush0.gumroad.com/l/dustpan" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnBuyLifetime">
+            Get Lifetime License ($14) →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Hub Section -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="download-box">
+        <h2 class="download-title">Reclaim Your Disk with Confidence</h2>
+        <p class="download-desc">
+          Download the verified official Windows installer. Lightweight, self-contained, and ready in seconds.
+        </p>
+
+        <div class="download-actions-grid">
+          <!-- Primary GitHub Release installer download -->
+          <a href="https://github.com/pourush5/dustpand-landingpage/releases/download/v1.0.0/DustPan-Setup-1.0.0.exe" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary" id="btnDownloadRelease">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download DustPan Setup (.exe)
+          </a>
+          <a href="https://pourush0.gumroad.com/l/dustpan" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-pro">
+            Buy Pro License Key ($14)
+          </a>
+        </div>
+
+        <div style="margin-top: 14px; margin-bottom: 20px;">
+          <a href="https://github.com/pourush5/dustpand-landingpage/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: var(--accent-cyan); text-decoration: none;">
+            View Official Release v1.0.0 on GitHub →
+          </a>
+        </div>
+
+        <div class="checksum-info">
+          Package: <strong>DustPan-Setup-1.0.0.exe</strong> (4.37 MB) • SHA-256 Verified • Windows 10/11 x64
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">
+          Everything you need to know about DustPan, its safety philosophy, and offline licensing.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>How is DustPan different from traditional automated cleaners or disk visualizers?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Disk visualizers only display folder sizes without assisting in safe triage. Traditional cleaners execute irreversible batch deletions across caches and temporary files that can break installed programs. DustPan focuses strictly on <strong>conservative, non-destructive assisted triage</strong>: it identifies stale multi-gigabyte files, skips dehydrated cloud files safely, stages candidates to an isolated review folder with an atomic JSON reversal manifest, and generates standalone inspectable Robocopy backup scripts.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>What happens when DustPan encounters dehydrated cloud-synced files?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            DustPan directly calls the Windows Win32 API (<code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">kernel32.GetFileAttributesW</code>) to inspect reparse point flags. If a file has <code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS</code> (indicating it is stored online without local bytes on your SSD), DustPan skips hashing or opening it. This completely prevents unwanted multi-gigabyte cloud re-downloads.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Does DustPan send my filenames or disk structure anywhere?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <strong>No. Absolutely never.</strong> The application runs an internal Go HTTP daemon strictly bound to <code style="font-family: var(--font-mono); font-size: 0.85rem; color: #34d399;">127.0.0.1:8484</code> (loopback interface only). It never listens on public interfaces or your local Wi-Fi. Every byte traversal, cryptographic hash calculation, and analysis happens 100% locally on your machine.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>How does the 14-day free trial work?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Every user gets unrestricted access to all features (including isolated review staging and Robocopy backup script generation) for 14 days from first launch. After 14 days, scanning, visual category breakdowns, age staleness charts, cryptographic duplicate detection, and full CSV audit exports remain <strong>free forever</strong>. Upgrading to Pro ($14) permanently unlocks batch staging and Robocopy export.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>Can I run DustPan completely offline?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. The Community Edition requires zero internet connection whatsoever. When activating a Pro Lifetime license key, DustPan performs a single one-time HTTPS verification with Gumroad, signs a tamper-proof HMAC-SHA256 token locally in your <code style="font-family: var(--font-mono); font-size: 0.85rem;">AppData/DustPan/config.json</code>, and never makes a phone-home connection again. Offline DP-PRO keys also validate completely air-gapped.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+          <button class="faq-question-btn">
+            <span>How do I restore files I staged to the review folder?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Whenever files are staged into <code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">DustPan_Review/To_Delete</code>, DustPan writes a cryptographic manifest (<code style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">manifest.json</code>) detailing each file's original absolute path, modification date, and hash. DustPan includes an atomic one-click restore function that reads this manifest and moves every file back to its exact original directory.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creator & Indie Support -->
+  <section class="section" style="padding-top: 20px; padding-bottom: 60px;">
+    <div class="container">
+      <div style="background: rgba(17, 24, 39, 0.6); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 36px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo)); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: #fff;">
+            P
+          </div>
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 700; color: #fff;">Crafted by Pourush Pandey</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">
+              Indie software craftsman building privacy-first desktop and web software. 
+              <a href="https://pourushpandey.vercel.app" target="_blank" rel="noopener noreferrer" class="creator-highlight" style="margin-left: 6px;">Visit Portfolio →</a>
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <a href="https://buymeacoffee.com/pourush" target="_blank" rel="noopener noreferrer" class="btn-coffee" title="Support indie software development">
+            ☕ Buy me a coffee
+          </a>
+          <a href="https://github.com/pourush5/dustpand-landingpage" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-side">
+          <div class="brand-wrapper">
+            <div class="brand-icon">
+              <img src="dustpan_icon.png" alt="DustPan Logo">
+            </div>
+            <div class="brand-title">DustPan</div>
+          </div>
+          <p>
+            Conservative, assisted disk triage and space recovery desktop application engineered natively for Windows 10 &amp; 11 (x64). 
+            Zero surprise deletions. 100% local loopback privacy.
+          </p>
+        </div>
+
+        <div class="footer-nav-groups">
+          <div class="footer-nav-col">
+            <h5>Product</h5>
+            <ul class="footer-links-list">
+              <li><a href="#features">Key Pillars</a></li>
+              <li><a href="#demo">Live Simulation</a></li>
+              <li><a href="#architecture">Architecture</a></li>
+              <li><a href="#comparison">Comparison</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-col">
+            <h5>Downloads &amp; Buy</h5>
+            <ul class="footer-links-list">
+              <li><a href="https://github.com/pourush5/dustpand-landingpage/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">GitHub Releases (v1.0.0)</a></li>
+              <li><a href="https://pourush0.gumroad.com/l/dustpan" target="_blank" rel="noopener noreferrer">Buy Pro Lifetime ($14)</a></li>
+              <li><a href="#download">System Requirements</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-col">
+            <h5>Creator</h5>
+            <ul class="footer-links-list">
+              <li><a href="https://pourushpandey.vercel.app" target="_blank" rel="noopener noreferrer">Pourush Portfolio</a></li>
+              <li><a href="https://buymeacoffee.com/pourush" target="_blank" rel="noopener noreferrer">Buy Me A Coffee</a></li>
+              <li><a href="https://github.com/pourush5/dustpand-landingpage" target="_blank" rel="noopener noreferrer">Landing Page GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <a href="https://pourushpandey.vercel.app" target="_blank" rel="noopener noreferrer" class="creator-highlight">Pourush Pandey</a>. All rights reserved.
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="badge badge-cyan">Win32 Native Mutex</span>
+          <span class="badge badge-emerald">Loopback 127.0.0.1:8484</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
