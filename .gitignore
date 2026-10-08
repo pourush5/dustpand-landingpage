@@ -1,0 +1,5 @@
+# Ignore private documentation and temporary files
+DOCUMENTATION.md
+.DS_Store
+Thumbs.db
+*.log
