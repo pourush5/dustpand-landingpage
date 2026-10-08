@@ -1,6 +1,6 @@
 # DustPan — Official Landing Page & Web Showcase
 
-Official high-performance, modern landing page for **DustPan**: a privacy-first, conservative disk triage and space recovery desktop application engineered natively for Windows 10 & 11 (x64).
+Official landing page for **DustPan**: a privacy-first, conservative disk triage and space recovery desktop application engineered natively for Windows 10 & 11 (x64).
 
 [![Platform: Windows 10/11](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20x64-0078d4.svg)](#)
 [![License: Commercial / Free Tier](https://img.shields.io/badge/License-Community%20%7C%20Pro%20Lifetime-10b981.svg)](#)
